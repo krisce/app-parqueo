@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignación de Roles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="roles-container">
+        <h1>Asignación de Roles</h1>
+        <div id="roleOptions"></div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const role = sessionStorage.getItem('role');
+        const roleOptions = document.getElementById('roleOptions');
+
+        if (role === 'estudiante') {
+            roleOptions.innerHTML = '<p>Opciones para estudiantes</p>';
+        } else if (role === 'profesor') {
+            roleOptions.innerHTML = '<p>Opciones para profesores</p>';
+        } else if (role === 'guarda de seguridad') {
+            roleOptions.innerHTML = '<p>Opciones para guardas de seguridad</p>';
+        }
+    });
+</script>
+</html>
+
