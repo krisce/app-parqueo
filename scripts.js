@@ -38,3 +38,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         }
     });
 });
+document.getElementById('infoButton').addEventListener('click', function() {
+    var infoContent = document.getElementById('infoContent');
+    if (infoContent.classList.contains('hidden')) {
+        infoContent.classList.remove('hidden');
+    } else {
+        infoContent.classList.add('hidden');
+    }
+});
