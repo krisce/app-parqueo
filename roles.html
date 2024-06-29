@@ -2,28 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Asignación de Roles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <title>Roles</title>
 </head>
 <body>
-    <div class="roles-container">
-        <h1>Asignación de Roles</h1>
-        <div id="roleOptions"></div>
+    <div class="container">
+        <h2>Selecciona tu Rol</h2>
+        <button onclick="seleccionarRol('Estudiante')">Estudiante</button>
+        <button onclick="seleccionarRol('Administración')">Administración</button>
+        <button onclick="seleccionarRol('Guarda')">Guarda</button>
+        <button onclick="mostrarInfo()">ℹ️</button>
+        <div id="info" style="display: none;">
+            <p>Estás en la sección de roles:</p>
+            <p>Paso uno: Escoge tu rol según tu consumo de la app.</p>
+            <p>Paso dos: Disfruta de la aplicación.</p>
+        </div>
     </div>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const role = sessionStorage.getItem('role');
-        const roleOptions = document.getElementById('roleOptions');
 
-        if (role === 'estudiante') {
-            roleOptions.innerHTML = '<p>Opciones para estudiantes</p>';
-        } else if (role === 'profesor') {
-            roleOptions.innerHTML = '<p>Opciones para profesores</p>';
-        } else if (role === 'guarda de seguridad') {
-            roleOptions.innerHTML = '<p>Opciones para guardas de seguridad</p>';
+    <script>
+        function seleccionarRol(rol) {
+            // Aquí puedes implementar la lógica para guardar el rol seleccionado en el sistema
+            console.log(`Rol seleccionado: ${rol}`);
+            // Ejemplo de redirección a otra página después de seleccionar el rol
+            // window.location.href = 'dashboard.html'; // Cambia 'dashboard.html' por la URL correcta
         }
-    });
-</script>
+
+        function mostrarInfo() {
+            var infoDiv = document.getElementById('info');
+            if (infoDiv.style.display === 'none') {
+                infoDiv.style.display = 'block';
+            } else {
+                infoDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
 </html>
+
 

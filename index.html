@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Parqueo ULACIT</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
 </head>
 <body>
     <div class="container">
@@ -11,5 +12,42 @@
         <button onclick="location.href='login.html'">Iniciar Sesión</button>
         <button onclick="location.href='signup.html'">Registrarse</button>
     </div>
+    <!-- Botón de información -->
+    <button id="infoButton" class="info-button">?</button>
+
+    <!-- Modal de información -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>Bienvenido usuario.</p>
+            <p>Paso 1: Registrarte con tu correo y contraseña "ulacit123".</p>
+            <p>Paso 2: Cambiar contraseña.</p>
+            <p>Paso 3: Asignar tu rol en la aplicación.</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtener los elementos del DOM
+        var infoButton = document.getElementById('infoButton');
+        var infoModal = document.getElementById('infoModal');
+        var closeButton = document.getElementsByClassName('close-button')[0];
+
+        // Mostrar el modal al hacer clic en el botón de información
+        infoButton.onclick = function() {
+            infoModal.style.display = 'block';
+        }
+
+        // Cerrar el modal al hacer clic en el botón de cerrar
+        closeButton.onclick = function() {
+            infoModal.style.display = 'none';
+        }
+
+        // Cerrar el modal al hacer clic fuera del contenido del modal
+        window.onclick = function(event) {
+            if (event.target == infoModal) {
+                infoModal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
