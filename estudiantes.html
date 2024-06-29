@@ -4,65 +4,82 @@
     <meta charset="UTF-8">
     <title>Interfaz de Estudiantes</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
 </head>
 <body>
     <div class="student-interface">
         <h2>Bienvenido Estudiante</h2>
         <button onclick="location.href='mis_vehiculos.html'">Mis Vehículos</button>
         <button onclick="location.href='mis_registros.html'">Mis Registros</button>
-    <!-- Botón de información -->
-    <button id="infoButton" class="info-button">?</button>
-
-    <!-- Modal de información -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <p>Bienvenido Estudiante.</p>
-            <p>Puede ingresar al parqueo que desea.</p>
-            <p>Debes registrar el vehiculo.</p>
-            <p>Puedes ver el registro</p>
-            <p>IMPORTANTE</p>
-            <p>El horario de los parqueo es de 6:30am a 10pm</p>
-        </div>
-    </div>
-
-    <script>
-        // Obtener los elementos del DOM
-        var infoButton = document.getElementById('infoButton');
-        var infoModal = document.getElementById('infoModal');
-        var closeButton = document.getElementsByClassName('close-button')[0];
-
-        // Mostrar el modal al hacer clic en el botón de información
-        infoButton.onclick = function() {
-            infoModal.style.display = 'block';
-        }
-
-        // Cerrar el modal al hacer clic en el botón de cerrar
-        closeButton.onclick = function() {
-            infoModal.style.display = 'none';
-        }
-
-        // Cerrar el modal al hacer clic fuera del contenido del modal
-        window.onclick = function(event) {
-            if (event.target == infoModal) {
-                infoModal.style.display = 'none';
-            }
-        }
-    </script>
+        
         <div class="parking-buttons">
-            <button class="parking-button"><img src="par2.png" alt="Parqueo 1"></button>
-            <button class="parking-button"><img src="par22.png" alt="Parqueo 2"></button>
-            <button class="parking-button"><img src="par3.png" alt="Parqueo 3"></button>
-            <button class="parking-button"><img src="par4.png" alt="Parqueo 4"></button>
-            <button class="parking-button"><img src="par5.png" alt="Parqueo 5"></button>
-            <button class="parking-button"><img src="par6.png" alt="Parqueo 6"></button>
+            <button class="parking-button">
+                <img src="par2.png" alt="Parqueo 1">
+                <span class="parking-text">P1</span>
+            </button>
+            <button class="parking-button">
+                <img src="par22.png" alt="Parqueo 2">
+                <span class="parking-text">P2</span>
+            </button>
+            <button class="parking-button">
+                <img src="par3.png" alt="Parqueo 3">
+                <span class="parking-text">P3</span>
+            </button>
+            <button class="parking-button">
+                <img src="par4.png" alt="Parqueo 4">
+                <span class="parking-text">P4</span>
+            </button>
+            <button class="parking-button">
+                <img src="par5.png" alt="Parqueo 5">
+                <span class="parking-text">P5</span>
+            </button>
+            <button class="parking-button">
+                <img src="par6.png" alt="Parqueo 6">
+                <span class="parking-text">P6</span>
+            </button>
+            
         </div>
+         <!-- Botón de información -->
+         <button id="infoButton" class="info-button">?</button>
+
+         <!-- Modal de información -->
+         <div id="infoModal" class="modal">
+             <div class="modal-content">
+                 <span class="close-button">&times;</span>
+                 <p>Bienvenido Estudiante.</p>
+                 <p>Puede ingresar al parqueo que desea.</p>
+                 <p>Debes registrar el vehículo.</p>
+                 <p>Puedes ver el registro</p>
+                 <p>IMPORTANTE</p>
+                 <p>El horario de los parqueos es de 6:30am a 10pm</p>
+             </div>
+         </div>
+ 
+         <script>
+             // codigo reciclado del primer boton
+             var infoButton = document.getElementById('infoButton');
+             var infoModal = document.getElementById('infoModal');
+             var closeButton = document.getElementsByClassName('close-button')[0];
+ 
+             // Muestra el boton con la informacion 
+             infoButton.onclick = function() {
+                 infoModal.style.display = 'block';
+             }
+ 
+             //  modal que deja hacer clic en el botón de cerrar
+             closeButton.onclick = function() {
+                 infoModal.style.display = 'none';
+             }
+ 
+             // modal para hacer clic fuera del contenido del modal
+             window.onclick = function(event) {
+                 if (event.target == infoModal) {
+                     infoModal.style.display = 'none';
+                 }
+             }
+         </script>
+ 
     </div>
-    <script>
-        document.getElementById('infoButton').addEventListener('click', function() {
-            var infoContent = document.getElementById('infoContent');
-            infoContent.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
+
